@@ -80,7 +80,7 @@ class QuantTensor(QuantTensorBase):
             return None
 
     @classmethod
-    def __torch_function__(self, func, types, args=(), kwargs=None):
+    def __torch_function__(cls, func, types, args=(), kwargs=None):
         if kwargs is None:
             kwargs = {}
         if (func not in QUANT_TENSOR_FN_HANDLER
